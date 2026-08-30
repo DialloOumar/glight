@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 520" width="760" height="520" role="img" aria-label="Guinea Light">
+  <defs>
+    
+    <linearGradient id="glGold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FBEDCB"></stop>
+      <stop offset="30%" stop-color="#EFCE96"></stop>
+      <stop offset="58%" stop-color="#E2B677"></stop>
+      <stop offset="100%" stop-color="#CC9A56"></stop>
+    </linearGradient>
+    <linearGradient id="glBeam" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#FBEBC8" stop-opacity="0.98"></stop>
+      <stop offset="26%" stop-color="#EFC287" stop-opacity="0.9"></stop>
+      <stop offset="62%" stop-color="#D79A55" stop-opacity="0.62"></stop>
+      <stop offset="100%" stop-color="#B87A3A" stop-opacity="0"></stop>
+    </linearGradient>
+    <linearGradient id="glBeamEdge" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8A5623" stop-opacity="0.55"></stop>
+      <stop offset="38%" stop-color="#FDF3DC" stop-opacity="0.95"></stop>
+      <stop offset="58%" stop-color="#E0AC6C" stop-opacity="0.5"></stop>
+      <stop offset="100%" stop-color="#7C4E1F" stop-opacity="0.5"></stop>
+    </linearGradient>
+    <filter id="glGlow" x="-120%" y="-120%" width="340%" height="340%">
+      <feGaussianBlur stdDeviation="26" result="b"></feGaussianBlur>
+      <feMerge><feMergeNode in="b"></feMergeNode><feMergeNode in="b"></feMergeNode></feMerge>
+    </filter>
+    <filter id="glSoft" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="7"></feGaussianBlur>
+    </filter>
+  </defs>
+
+  <ellipse cx="348" cy="228" rx="86" ry="150" fill="#E9BE7E" opacity="0.3" filter="url(#glGlow)"></ellipse>
+
+  <path d="M360 44 C 372 96, 396 200, 412 296 L 308 296 C 324 200, 348 96, 360 44 Z" fill="url(#glBeam)"></path>
+  <path d="M360 44 C 366 100, 380 212, 388 296 L 332 296 C 340 212, 354 100, 360 44 Z" fill="url(#glBeamEdge)" opacity="0.75" filter="url(#glSoft)"></path>
+  <path d="M360 48 C 363 104, 368 200, 371 292 L 351 292 C 354 200, 357 104, 360 48 Z" fill="#FFF6E2" opacity="0.85" filter="url(#glSoft)"></path>
+
+  <g class="gl-mono" fill="url(#glGold)">
+    <text x="352" y="290" font-size="176" text-anchor="middle">G</text>
+    <text x="382" y="316" font-size="176" text-anchor="middle">L</text>
+  </g>
+
+  <text class="gl-word" x="380" y="420" font-size="76" letter-spacing="2" text-anchor="middle" fill="url(#glGold)">GUINEA LIGHT</text>
+</svg>
