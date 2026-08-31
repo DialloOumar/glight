@@ -1,6 +1,7 @@
 /* ===== Guinea Light — shared site behaviour ===== */
 (function () {
   'use strict';
+  window.__glReady = true;      // tells the inline failsafe the reveal logic is live
   var WA = '224600000000'; // TODO: replace with the real WhatsApp number
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -32,15 +33,48 @@
     });
   }
 
+  /* cascade grid children instead of landing them all at once */
+  document.querySelectorAll('.stagger').forEach(function (c) {
+    Array.prototype.forEach.call(c.children, function (el, i) {
+      el.style.transitionDelay = Math.min(i, 9) * 70 + 'ms';
+    });
+  });
+
+  /* count the stat numbers up when they scroll into view */
+  var countUp = function (row) {
+    if (reduce) return;
+    row.querySelectorAll('b').forEach(function (b) {
+      // only plain counts, optionally with a trailing "+"; anything else
+      // (e.g. "7j/7") would animate into nonsense like "3j/7"
+      var m = /^(\d+)(\+?)$/.exec(b.textContent.trim());
+      if (!m) return;
+      var target = +m[1], suffix = m[2], t0 = 0;
+      var step = function (ts) {
+        if (!t0) t0 = ts;
+        var k = Math.min((ts - t0) / 1100, 1);
+        k = 1 - Math.pow(1 - k, 3);         // ease-out
+        b.textContent = Math.round(target * k) + suffix;
+        if (k < 1) requestAnimationFrame(step);
+      };
+      b.textContent = '0' + suffix;
+      requestAnimationFrame(step);
+    });
+  };
+
   /* reveal on scroll */
-  var reveals = document.querySelectorAll('[data-reveal]');
+  // .stagger containers are observed too — a .gal sits inside a venue rather
+  // than carrying data-reveal itself, and its children start at opacity:0
+  var reveals = document.querySelectorAll('[data-reveal], .stagger');
   if (reveals.length) {
     if (reduce || !('IntersectionObserver' in window)) {
       reveals.forEach(function (el) { el.classList.add('in'); });
     } else {
       var io = new IntersectionObserver(function (entries) {
         entries.forEach(function (en) {
-          if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+          if (!en.isIntersecting) return;
+          en.target.classList.add('in');
+          if (en.target.classList.contains('stats__row')) countUp(en.target);
+          io.unobserve(en.target);
         });
       }, { rootMargin: '0px 0px -12% 0px' });
       reveals.forEach(function (el) { io.observe(el); });
@@ -78,7 +112,7 @@
         // so settle its reveal state here rather than leave it at opacity:0
         if (show) {
           el.classList.add('in');
-          el.querySelectorAll('[data-reveal]').forEach(function (c) { c.classList.add('in'); });
+          el.querySelectorAll('[data-reveal], .stagger').forEach(function (c) { c.classList.add('in'); });
         }
       });
     });
