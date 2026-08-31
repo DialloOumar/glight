@@ -72,8 +72,59 @@
         c.setAttribute('aria-pressed', String(c === chip));
       });
       items.forEach(function (el) {
-        el.hidden = !(key === 'all' || el.dataset.type === key);
+        var show = (key === 'all' || el.dataset.type === key);
+        el.hidden = !show;
+        // an item revealed by filtering may never trigger the scroll observer,
+        // so settle its reveal state here rather than leave it at opacity:0
+        if (show) {
+          el.classList.add('in');
+          el.querySelectorAll('[data-reveal]').forEach(function (c) { c.classList.add('in'); });
+        }
       });
+    });
+  }
+
+  /* lightbox — walks whichever gallery the clicked photo belongs to */
+  var lb = document.getElementById('lightbox');
+  if (lb) {
+    var lbImg = document.getElementById('lb-img');
+    var lbCap = document.getElementById('lb-cap');
+    var shots = [], at = 0;
+
+    var show = function (i) {
+      if (!shots.length) return;
+      at = (i + shots.length) % shots.length;
+      var b = shots[at];
+      lbImg.src = b.dataset.full;
+      lbImg.alt = b.dataset.alt || '';
+      lbCap.textContent = (b.dataset.alt || '') + '  ·  ' + (at + 1) + '/' + shots.length;
+    };
+    var close = function () {
+      lb.hidden = true;
+      lbImg.src = '';
+      document.body.style.overflow = '';
+    };
+
+    document.querySelectorAll('.gal').forEach(function (gal) {
+      gal.addEventListener('click', function (e) {
+        var btn = e.target.closest('.gal__i');
+        if (!btn) return;
+        shots = Array.prototype.slice.call(gal.querySelectorAll('.gal__i'));
+        lb.hidden = false;
+        document.body.style.overflow = 'hidden';
+        show(shots.indexOf(btn));
+      });
+    });
+
+    document.getElementById('lb-close').onclick = close;
+    document.getElementById('lb-prev').onclick = function () { show(at - 1); };
+    document.getElementById('lb-next').onclick = function () { show(at + 1); };
+    lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+    addEventListener('keydown', function (e) {
+      if (lb.hidden) return;
+      if (e.key === 'Escape') close();
+      else if (e.key === 'ArrowLeft') show(at - 1);
+      else if (e.key === 'ArrowRight') show(at + 1);
     });
   }
 

@@ -1,0 +1,134 @@
+{
+ "city-royal": [
+  {
+   "full": "/assets/projects/city-royal/01.jpg",
+   "thumb": "/assets/projects/city-royal/01-t.jpg",
+   "w": 1080,
+   "h": 810,
+   "alt": "Salle du City Royal en bleu, lignes LED géométriques au plafond"
+  },
+  {
+   "full": "/assets/projects/city-royal/02.jpg",
+   "thumb": "/assets/projects/city-royal/02-t.jpg",
+   "w": 1080,
+   "h": 534,
+   "alt": "Le City Royal en rouge, plafond lumineux et banquettes"
+  },
+  {
+   "full": "/assets/projects/city-royal/03.jpg",
+   "thumb": "/assets/projects/city-royal/03-t.jpg",
+   "w": 1080,
+   "h": 718,
+   "alt": "Détail du plafond LED du City Royal, motifs rouges sur fond noir"
+  },
+  {
+   "full": "/assets/projects/city-royal/04.jpg",
+   "thumb": "/assets/projects/city-royal/04-t.jpg",
+   "w": 1080,
+   "h": 445,
+   "alt": "Ciel étoilé LED violet du City Royal en perspective"
+  },
+  {
+   "full": "/assets/projects/city-royal/05.jpg",
+   "thumb": "/assets/projects/city-royal/05-t.jpg",
+   "w": 1080,
+   "h": 445,
+   "alt": "Plafond LED violet et allée centrale du City Royal"
+  }
+ ],
+ "saala-lounge": [
+  {
+   "full": "/assets/projects/saala-lounge/01.jpg",
+   "thumb": "/assets/projects/saala-lounge/01-t.jpg",
+   "w": 960,
+   "h": 1280,
+   "alt": "Canopée LED radiale du Saala Lounge, faisceaux rouges et bleus"
+  },
+  {
+   "full": "/assets/projects/saala-lounge/02.jpg",
+   "thumb": "/assets/projects/saala-lounge/02-t.jpg",
+   "w": 960,
+   "h": 1280,
+   "alt": "Canopée LED et faisceaux croisés au Saala Lounge de Labé"
+  },
+  {
+   "full": "/assets/projects/saala-lounge/03.jpg",
+   "thumb": "/assets/projects/saala-lounge/03-t.jpg",
+   "w": 960,
+   "h": 1280,
+   "alt": "Faisceaux bleus et rouges sous la canopée du Saala Lounge"
+  },
+  {
+   "full": "/assets/projects/saala-lounge/04.jpg",
+   "thumb": "/assets/projects/saala-lounge/04-t.jpg",
+   "w": 1280,
+   "h": 960,
+   "alt": "Rampe de tubes LED multicolores à l'entrée du Saala Lounge"
+  },
+  {
+   "full": "/assets/projects/saala-lounge/05.jpg",
+   "thumb": "/assets/projects/saala-lounge/05-t.jpg",
+   "w": 960,
+   "h": 1280,
+   "alt": "Tubes LED arc-en-ciel éclairant la terrasse du Saala Lounge"
+  }
+ ],
+ "sky": [
+  {
+   "full": "/assets/projects/sky/01.jpg",
+   "thumb": "/assets/projects/sky/01-t.jpg",
+   "w": 1280,
+   "h": 856,
+   "alt": "Faisceaux de lyres au-dessus de la piste du Sky"
+  },
+  {
+   "full": "/assets/projects/sky/02.jpg",
+   "thumb": "/assets/projects/sky/02-t.jpg",
+   "w": 1280,
+   "h": 853,
+   "alt": "Faisceaux croisés et carré lumineux au Sky"
+  },
+  {
+   "full": "/assets/projects/sky/03.jpg",
+   "thumb": "/assets/projects/sky/03-t.jpg",
+   "w": 1280,
+   "h": 853,
+   "alt": "Ambiance violette et faisceaux au-dessus du carré VIP du Sky"
+  },
+  {
+   "full": "/assets/projects/sky/04.jpg",
+   "thumb": "/assets/projects/sky/04-t.jpg",
+   "w": 1280,
+   "h": 854,
+   "alt": "Salle du Sky en bleu et vert, murs LED et banquettes"
+  },
+  {
+   "full": "/assets/projects/sky/05.jpg",
+   "thumb": "/assets/projects/sky/05-t.jpg",
+   "w": 1280,
+   "h": 854,
+   "alt": "Grille LED bleue et banquettes du Sky"
+  },
+  {
+   "full": "/assets/projects/sky/06.jpg",
+   "thumb": "/assets/projects/sky/06-t.jpg",
+   "w": 1280,
+   "h": 853,
+   "alt": "Décors LED géométriques bleus au-dessus de la piste du Sky"
+  },
+  {
+   "full": "/assets/projects/sky/07.jpg",
+   "thumb": "/assets/projects/sky/07-t.jpg",
+   "w": 1280,
+   "h": 854,
+   "alt": "Le Sky en rouge, panneaux LED et carré VIP"
+  },
+  {
+   "full": "/assets/projects/sky/08.jpg",
+   "thumb": "/assets/projects/sky/08-t.jpg",
+   "w": 1280,
+   "h": 854,
+   "alt": "Mur de cadres LED verts du Sky"
+  }
+ ]
+}
