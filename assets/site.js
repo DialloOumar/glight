@@ -2,7 +2,7 @@
 (function () {
   'use strict';
   window.__glReady = true;      // tells the inline failsafe the reveal logic is live
-  var WA = '224600000000'; // TODO: replace with the real WhatsApp number
+  var WA = '224620615493';
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* header condense */
